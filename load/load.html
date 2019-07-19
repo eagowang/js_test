@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      console.log('head script');
+    </script>
+    <script src="./a.js" async></script>
+
+    <script src="./b.js" defer></script>
+  </head>
+  <body>
+    <h1>测试script加载</h1>
+    <script>
+      window.onload = function() {
+        console.log('window onload');
+      };
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('domcontentloaded');
+      });
+    </script>
+    <script>
+      var script = document.createElement('script');
+      script.src = './c.js';
+      script.type = 'text/javascript';
+      script.onload = function() {
+        console.log('动态script脚本加载完毕');
+      };
+      document.getElementsByTagName('head')[0].appendChild(script);
+      console.log('body script');
+    </script>
+  </body>
+</html>
