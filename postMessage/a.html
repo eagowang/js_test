@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>a html</title>
+  </head>
+  <body>
+    <iframe
+      id="iframe"
+      src="http://127.0.0.1:5500/postMessage/b.html"
+      onload="load()"
+    ></iframe>
+    <script>
+      // console.log(iframe.contentWindow.document); // Blocked a frame with origin "null" from accessing a cross-origin frame.
+
+      const iframe = document.getElementById('iframe');
+      iframe.onload = function() {
+        iframe.contentWindow.postMessage(
+          JSON.stringify({ type: 'get_message' }),
+          '*'
+        );
+      };
+      window.addEventListener('message', function(res) {
+        const data = JSON.parse(res.data);
+        document.title = data.data.title;
+      });
+    </script>
+  </body>
+</html>
