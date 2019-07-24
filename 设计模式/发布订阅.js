@@ -39,3 +39,7 @@ events.publish("eat", "大餐");
 
 events.unsubscribe("eat", wyc);
 events.publish("eat", "大餐");
+
+// 发布订阅和观察者区别
+// 观察者有明确的订阅主体
+// 发布订阅在全局events对象中控制消息
