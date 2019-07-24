@@ -1,6 +1,6 @@
-var PENDING = 'pending';
-var FULFILLED = 'fulfilled';
-var REJECTED = 'rejected';
+var PENDING = "pending";
+var FULFILLED = "fulfilled";
+var REJECTED = "rejected";
 
 function MyPromise(fn) {
   // 三种状态，一旦fulfilled或rejected，就不会变了
@@ -43,13 +43,13 @@ MyPromise.prototype.then = function(onFulfilled, onRejected) {
   var self = this;
   var promise2;
   onFulfilled =
-    typeof onResolved === 'function'
+    typeof onResolved === "function"
       ? onResolved
       : function(value) {
           return value;
         };
   onRejected =
-    typeof onRejected === 'function'
+    typeof onRejected === "function"
       ? onRejected
       : function(reason) {
           throw reason;
@@ -125,14 +125,14 @@ MyPromise.prototype.then = function(onFulfilled, onRejected) {
 
 var p1 = new MyPromise(function(resolve, reject) {
   setTimeout(function() {
-    resolve('p1');
+    resolve("p1");
   }, 1000);
 });
 
 var getP2FromP1 = function(res) {
   return new MyPromise(function(resolve, reject) {
     setTimeout(function() {
-      resolve('p2' + res);
+      resolve("p2" + res);
     }, 1000);
   });
 };
@@ -143,7 +143,7 @@ p1.then(getP2FromP1).then(function(res) {
 
 var p2 = new MyPromise(function(resolve, reject) {
   setTimeout(function() {
-    resolve('hello');
+    resolve("hello");
   }, 1000);
 });
 p2.then(function(res) {
