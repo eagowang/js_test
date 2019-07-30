@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>表单上传测试</title>
+  </head>
+  <body>
+    <h2>form表单提交</h2>
+    <form
+      action="http://localhost:8080/commit"
+      method="post"
+      target="nm_iframe"
+    >
+      <section>姓名：<input type="text" name="name" /></section>
+
+      <section>
+        性别： 男：<input type="radio" name="gender" value="1" /> 女：<input
+          type="radio"
+          name="gender"
+          value="2"
+        />
+      </section>
+      <section>
+        爱好 玩1：<input type="checkbox" name="hobby" value="1" /> 玩2：<input
+          type="checkbox"
+          name="hobby"
+          value="2"
+        />
+        玩3：<input type="checkbox" name="hobby" value="3" />
+      </section>
+      <input type="submit" />
+    </form>
+    <h2>form表单上传</h2>
+    <form
+      action="http://localhost:8080/upload"
+      method="post"
+      target="nm_iframe"
+      enctype="multipart/form-data"
+    >
+      <section>名字：<input type="text" name="name" /></section>
+      <section>
+        <input type="file" name="file" />
+      </section>
+      <input type="submit" />
+    </form>
+
+    <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
+  </body>
+</html>
