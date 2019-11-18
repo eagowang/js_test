@@ -1,19 +1,27 @@
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
 var inorderTraversal = function(root) {
   var res = [];
-  var stack = [root];
-  while (stack.length > 0) {
-    var node = stack.pop();
-    res.push(node.val);
-    if (node.right) stack.push(node.right);
-    if (node.left) stack.push(node.right);
+  var stack = [];
+  var node = root;
+  while (node || stack.length > 0) {
+    if (node) {
+      stack.push(node);
+      node = node.left;
+    } else {
+      node = stack.pop();
+      res.push(node.val);
+      node = node.right;
+    }
   }
   return res;
 };
-
-var root = {
-  val: 1,
-  left: { val: 2, left: null, right: null },
-  right: { val: 3, left: null, right: null }
-};
-
-console.log(inorderTraversal(root));
