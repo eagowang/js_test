@@ -1,0 +1,17 @@
+{
+  "name": "minipack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/traverse": "^7.7.2",
+    "babylon": "^6.18.0"
+  }
+}
