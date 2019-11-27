@@ -5,14 +5,19 @@ console.log("script start");
 setTimeout(function() {
   console.log("timer");
 });
+setImmediate(function() {
+  console.log("setImmediate");
+});
 process.nextTick(function() {
   console.log("process nextTick");
 });
 fs.readFile("./data.txt", function(data) {
-  console.log(111);
+  setTimeout(function() {
+    console.log("io timer");
+  });
+  setImmediate(function() {
+    console.log("io setImmediate");
+  });
 });
 
-setImmediate(function() {
-  console.log("setImmediate");
-});
 console.log("script end");
