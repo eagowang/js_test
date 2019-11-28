@@ -7,4 +7,10 @@
 开发分支测试git-rebase
 测试开发分支2222
 测试开发分支3333
+<<<<<<< HEAD
 主分支测试squash
+=======
+
+测试git squash
+测试squash 2
+>>>>>>> feat: 开发分支
