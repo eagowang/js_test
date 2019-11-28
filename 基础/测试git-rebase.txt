@@ -1,4 +1,8 @@
 测试git-rebase
 测试squash
+<<<<<<< HEAD
 主分支修改
 主分支修改2
+=======
+开发分支
+>>>>>>> feature/a
