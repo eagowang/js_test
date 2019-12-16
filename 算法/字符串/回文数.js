@@ -1,3 +1,5 @@
+// 核心思路，从两边开始，到中间位置，如果数字相同则是回文数
+
 /**
  * @param {number} x
  * @return {boolean}
