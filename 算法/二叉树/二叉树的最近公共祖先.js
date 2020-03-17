@@ -12,6 +12,36 @@
  * @return {TreeNode}
  */
 // 方法1，迭代法，利用中序遍历，判断位置
+// var lowestCommonAncestor = function(root, p, q) {
+//   var res = [];
+//   var stack = [];
+//   var node = root;
+//   while (node || stack.length > 0) {
+//     if (node) {
+//       stack.push(node);
+//       node = node.left;
+//     } else {
+//       node = stack.pop();
+//       res.push(node.val);
+//       node = node.right;
+//     }
+//   }
+//   node = root;
+//   var posP = res.indexOf(p.val);
+//   var posQ = res.indexOf(q.val);
+//   while (node) {
+//     var rootVal = node.val;
+//     var posRoot = res.indexOf(rootVal);
+//     if (posRoot > posP && posRoot > posQ) {
+//       node = node.left;
+//     } else if (posRoot < posP && posRoot < posQ) {
+//       node = node.right;
+//     } else {
+//       return node;
+//     }
+//   }
+// };
+
 var lowestCommonAncestor = function(root, p, q) {
   var res = [];
   var stack = [];
@@ -27,12 +57,12 @@ var lowestCommonAncestor = function(root, p, q) {
     }
   }
   node = root;
-  var posP = res.indexOf(p.val);
-  var posQ = res.indexOf(q.val);
+  var posP = res.indexOf(p);
+  var posQ = res.indexOf(q);
   while (node) {
     var rootVal = node.val;
     var posRoot = res.indexOf(rootVal);
-    if (posRoot > posP && posRoot > posQ) {
+    if ((posRoot > posP) & (posRoot > posQ)) {
       node = node.left;
     } else if (posRoot < posP && posRoot < posQ) {
       node = node.right;

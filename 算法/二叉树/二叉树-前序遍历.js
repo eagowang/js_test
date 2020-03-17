@@ -1,3 +1,16 @@
+// var preorderTraversal = function(root) {
+//   var res = [];
+//   var stack = [root];
+//   while (stack.length > 0) {
+//     var node = stack.pop();
+//     res.push(node.val);
+//     if (node.right) stack.push(node.right);
+//     if (node.left) stack.push(node.right);
+//   }
+//   return res;
+// };
+
+// 前序遍历
 var preorderTraversal = function(root) {
   var res = [];
   var stack = [root];
@@ -5,7 +18,7 @@ var preorderTraversal = function(root) {
     var node = stack.pop();
     res.push(node.val);
     if (node.right) stack.push(node.right);
-    if (node.left) stack.push(node.right);
+    if (node.left) stack.push(node.left);
   }
   return res;
 };

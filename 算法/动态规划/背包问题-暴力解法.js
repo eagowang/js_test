@@ -7,7 +7,20 @@ var n = 5;
 // 背包承受的最大重量
 var w = 9;
 
-// 回溯算法
+// // 回溯算法
+// function f(i, cw) {
+//   if (i == n || cw == w) {
+//     if (cw > maxW) maxW = cw;
+//     return;
+//   }
+//   f(i + 1, cw);
+//   if (cw + weight[i] <= w) {
+//     f(i + 1, cw + weight[i]);
+//   }
+// }
+// f(0, 0);
+
+// 思路，递归，先放一个，再放第二个，递归结束标识是全部放完或者背包重量等于最大重量
 function f(i, cw) {
   if (i == n || cw == w) {
     if (cw > maxW) maxW = cw;
@@ -18,5 +31,5 @@ function f(i, cw) {
     f(i + 1, cw + weight[i]);
   }
 }
-f(0, 0);
+
 console.log(maxW);

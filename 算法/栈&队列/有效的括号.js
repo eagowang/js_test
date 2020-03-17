@@ -1,13 +1,13 @@
 var isValid = function(s) {
-  if (s === '') return true;
+  if (s === "") return true;
   var stack = [];
   for (var i = 0; i < s.length; i++) {
-    if (s[i] === '(') {
-      stack.push(')');
-    } else if (s[i] === '{') {
-      stack.push('}');
-    } else if (s[i] === '[') {
-      stack.push(']');
+    if (s[i] === "(") {
+      stack.push(")");
+    } else if (s[i] === "{") {
+      stack.push("}");
+    } else if (s[i] === "[") {
+      stack.push("]");
     } else {
       if (stack.pop() !== s[i]) {
         return false;
@@ -21,4 +21,4 @@ var isValid = function(s) {
   }
 };
 
-console.log(isValid('{()[]}'));
+console.log(isValid("{()[]}"));

@@ -10,22 +10,39 @@
  * @param {ListNode} l2
  * @return {ListNode}
  */
+// var mergeTwoLists = function(l1, l2) {
+//   var l, tmp;
+//   l = tmp = {};
+//   while (l1 != null && l2 != null) {
+//     if (l1.val <= l2.val) {
+//       tmp.next = l1;
+
+//       l1 = l1.next;
+//     } else {
+//       tmp.next = l2;
+
+//       l2 = l2.next;
+//     }
+//     tmp = tmp.next;
+//   }
+//   tmp.next = l1 == null ? l2 : l1;
+//   return l.next;
+// };
 var mergeTwoLists = function(l1, l2) {
   var l, tmp;
   l = tmp = {};
   while (l1 != null && l2 != null) {
     if (l1.val <= l2.val) {
       tmp.next = l1;
-
       l1 = l1.next;
     } else {
-      tmp.next = l2;
-
+      temp.next = l2;
       l2 = l2.next;
     }
     tmp = tmp.next;
   }
   tmp.next = l1 == null ? l2 : l1;
+
   return l.next;
 };
 
