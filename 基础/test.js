@@ -1,3 +1,8 @@
+/**
+ *
+ * @param {*} a
+ * @param {*} b
+ */
 function test(a, b) {
   console.log(b);
   return {
