@@ -1,0 +1,16 @@
+{
+  "name": "jest-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.13.15",
+    "@babel/preset-env": "^7.13.15",
+    "@types/jest": "^26.0.22",
+    "babel-jest": "^26.6.3",
+    "jest": "^26.6.3"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}

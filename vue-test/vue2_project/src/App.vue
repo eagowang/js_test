@@ -3,17 +3,20 @@
     <h1>父组件</h1>
     <label for="msg">change item.msg：</label>
     <input id="msg" type="text" v-model="item.msg" />
-    <HelloWorld :item="item" />
+    <!-- <HelloWorld :item="item" /> -->
+    <Scroll />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+// import HelloWorld from './components/HelloWorld.vue';
+import Scroll from '@/components/Scroll.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    // HelloWorld,
+    Scroll,
   },
   provide() {
     return {
