@@ -8,17 +8,16 @@ function express() {
 
   var app = function (req, res) {
     var i = 0;
-
     function next() {
       var task = funcs[i++]; // 取出函数数组里的下一个函数
       if (!task) {
         // 如果函数不存在,return
         return;
       }
-      task(req, res, next); // 否则,执行下一个函数
+      return Promise.resolve(task(req, res, next)); // 否则,执行下一个函数
     }
 
-    next();
+    return next();
   };
 
   /**
@@ -33,15 +32,33 @@ function express() {
 }
 
 var app = express();
+
 app.use(function (req, res, next) {
   console.log('middlewareA before next()');
   next();
   console.log('middlewareA after next()');
 });
-app.use(function (req, res, next) {
+
+app.use(async function (req, res, next) {
   console.log('middlewareB before next()');
-  next();
+  res.a = 111;
+  await next();
+  await getData('');
   console.log('middlewareB after next()');
 });
 
+app.use(async function (req, res) {
+  console.log('last middleware');
+  await getData('');
+  console.log('done');
+});
+
 app({}, {});
+function getData(text) {
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      // console.log('fetch data', text);
+      resolve();
+    }, 1000);
+  });
+}
