@@ -7,43 +7,108 @@ function compose(...funcs) {
     return funcs[0];
   }
 
-  return funcs.reduce((a, b) => (...args) => a(b(...args)));
+  return funcs.reduce((a, b) => (...args) => {
+    const c = a(b(...args));
+    return c;
+  });
 }
-
-function doSomething(num) {
-  console.log(num);
-}
-// function printR(str) {
-//   console.log(str);
-// }
-
-// const delay = str => next => () => {
-//   setTimeout(() => {
-//     printR(str);
-//     next();
-//   }, 500);
-// };
-
-// const delayDoSomething = compose(
-//   delay("a"),
-//   delay("b"),
-//   delay("c")
-// )(doSomething);
-function add(next) {
+// 返回一个函数,
+const e = (...args) => {
+  return ((next) => {
+    return (num) => {
+      next(num + 1);
+    };
+  })(
+    ((next) => {
+      return (num) => {
+        setTimeout(() => {
+          next(num * 2);
+        }, 2000);
+      };
+    })(...args)
+  );
+};
+e(doSomething)(1);
+const f = (...args) => (num) => {
+  ((num) => {
+    setTimeout(() => {
+      args[0](num * 2);
+    }, 2000);
+  })(num + 1);
+};
+f(doSomething)(1);
+const add = (next) => {
   return (num) => {
     next(num + 1);
   };
-}
-function multiple(next) {
+};
+const multiple = (next) => {
   return (num) => {
     setTimeout(() => {
       next(num * 2);
     }, 2000);
   };
+};
+function doSomething(num) {
+  console.log(num);
+  return num;
 }
+const _c = compose(add, multiple);
+const _d = _c(doSomething);
 
-const delayDoSomething = compose(add, multiple)(doSomething);
+_d(1);
 
-delayDoSomething(1);
+// console.log(
+//   Promise.resolve(
+//     (async () => {
+//       console.log('first before');
+//       await Promise.resolve(
+//         (async () => {
+//           console.log('second before');
+//           await Promise.resolve(
+//             (() => {
+//               console.log('done');
+//             })()
+//           );
+//           console.log('second after');
+//         })()
+//       );
+//       console.log('first after');
+//     })()
+//   )
+// );
 
-// const _delayDoSomething = (...args) => {};
+// console.log(
+//   Promise.resolve(
+//     (async () => {
+//       console.log('first before');
+//       await Promise.resolve(
+//         (async () => {
+//           console.log('second before');
+//           await Promise.resolve(
+//             (() => {
+//               console.log('done');
+//             })()
+//           ).then(() => {
+//             console.log('second after');
+//           });
+//         })()
+//       ).then(() => {
+//         console.log('first after');
+//       });
+//     })()
+//   )
+// );
+
+(...args) =>
+  (function m1(next) {
+    // ...
+  })(
+    (function m2(next) {
+      // ...
+    })(
+      (function printf(next) {
+        // ...
+      })(...args)
+    )
+  );

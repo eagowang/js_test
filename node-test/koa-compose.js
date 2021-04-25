@@ -1,14 +1,15 @@
 // 洋葱模型，正向
-function m1(ctx, next) {
+async function m1(ctx, next) {
   console.log('first before');
-  next();
+  await next();
   console.log('first after');
 }
 
-function m2(ctx, next) {
+ async function m2(ctx, next) {
   console.log('second before');
-  next();
+  await next();
   console.log('second after');
+
 }
 
 async function m3(ctx, next) {
@@ -16,7 +17,6 @@ async function m3(ctx, next) {
   await next();
   console.log('third after');
 }
-
 const fns = [m1, m2, m3];
 // next，宏任务微任务执行顺序，使用next介入顺序，也就是说在next替换成对应的promise，用递归可以实现这种效果
 function compose(middleware) {
@@ -42,7 +42,8 @@ function compose(middleware) {
       if (!fn) return Promise.resolve();
       try {
         // 确保fn()返回promise，并修改中间件的next参数
-        return fn(context, dispatch.bind(null, i + 1));
+        return Promise.resolve(fn(context, dispatch.bind(null, i + 1)));
+        // return fn(context, dispatch.bind(null, i + 1));
       } catch (err) {
         return Promise.reject(err);
       }
@@ -53,3 +54,16 @@ const c = compose(fns);
 c(null, (ctx, next) => {
   console.log('done');
 });
+
+// function factorial(n) {
+//   if (n === 1) return 1;
+//   return n * factorial(n - 1);
+// }
+
+// console.log(factorial(5))// 120
+// function factorial(n, total) {
+//   if (n === 1) return total;
+//   return factorial(n - 1, n * total);
+// }
+
+// console.log(factorial(5, 1)) // 120
