@@ -3,5 +3,17 @@
   // 悬停以查看现有属性的描述。
   // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
-  "configurations": []
+  "configurations": [
+
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "program": "${workspaceFolder}/node-test/react-redux.js",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+    "runtimeExecutable": "/Users/bytedance/.nvm/versions/node/v12.16.1/bin/node"
+    }
+  ]
 }

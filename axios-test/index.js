@@ -29,7 +29,7 @@ const compareVersion = function (
     data1 = parseInt(arr1[i]) || 0;
     data2 = parseInt(arr2[i]) || 0;
     if (data1 < data2) {
-      return -1;
+      return ;
     } else if (data1 > data2) {
       return 1;
     }

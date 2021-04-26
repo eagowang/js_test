@@ -38,11 +38,13 @@ const f = (...args) => (num) => {
 };
 f(doSomething)(1);
 const add = (next) => {
-  return (num) => {
-    next(num + 1);
-  };
+  console.log(111)
+  // return (num) => {
+    next();
+  // };
 };
 const multiple = (next) => {
+  console.log(222)
   return (num) => {
     setTimeout(() => {
       next(num * 2);
@@ -53,10 +55,10 @@ function doSomething(num) {
   console.log(num);
   return num;
 }
-const _c = compose(add, multiple);
+const _c = compose(add, add, multiple);
 const _d = _c(doSomething);
 
-_d(1);
+// _d(1);
 
 // console.log(
 //   Promise.resolve(
