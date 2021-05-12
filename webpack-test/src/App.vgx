@@ -1,0 +1,13 @@
+<html>
+  <div> 123 </div>
+</html>
+
+<script lang="js">
+  var obj = {
+    a: 1
+  }
+</script>
+
+<style>
+
+</style>

@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const resolve = (p) => path.resolve(__dirname, p);
 module.exports = {
   mode: 'development',
-  entry: './src/App.jsx',
+  entry: './src/App.vgx',
   output: {
     path: resolve('dist'),
     filename: 'index.js',
@@ -11,8 +11,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/i,
-        use: 'babel-loader',
+        test: /\.vgx?$/i,
+        use: ['babel-loader', { loader: resolve('./vgx-loader.js') }],
       },
       {
         test: /\.(css|less)$/i,
