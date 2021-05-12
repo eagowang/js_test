@@ -1,0 +1,11 @@
+{
+  "name": "postcss-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.2.13",
+    "v8": "^0.1.0"
+  }
+}

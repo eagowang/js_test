@@ -1,0 +1,15 @@
+--main-color: black;
+@import url('./default.css');
+@media screen and (min-width: 900px) {
+  article {
+    // padding: 1rem 3rem;
+  }
+}
+body {
+  padding: 0;
+  /* margin: 0; */
+  color: var(--main-color);
+  ul {
+    list-style: none;
+  }
+}
