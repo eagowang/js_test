@@ -3,7 +3,7 @@ import './index.less';
 
 export default function Index() {
   return (
-    <div class='container'>
+    <div className='container'>
       <div className='header'>页头</div>
       <div className='main'>
         <p>第一行</p>

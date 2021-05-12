@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve --open"
+    "dev": "webpack serve"
   },
   "keywords": [],
   "author": "",
@@ -20,13 +20,22 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "autoprefixer": "^10.2.5",
     "css-loader": "^5.2.4",
     "html-webpack-plugin": "^5.3.1",
     "less": "^4.1.1",
     "less-loader": "^8.1.1",
     "postcss": "^8.2.12",
+    "postcss-comment": "^2.0.0",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-import": "^14.0.1",
+    "postcss-inline-comment": "^3.0.0",
+    "postcss-less": "^4.0.1",
     "postcss-loader": "^5.2.0",
+    "postcss-nested": "^5.0.5",
     "postcss-preset-env": "^6.7.0",
+    "postcss-scss": "^3.0.5",
+    "precss": "^4.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "style-loader": "^2.0.0"
