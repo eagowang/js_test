@@ -1,0 +1,5 @@
+export function getSystemInfo(){
+  return {
+    platform: 'android'
+  }
+}
