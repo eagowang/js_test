@@ -1,0 +1,10 @@
+{
+  "name": "webpack-test-3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {},
+  "scripts": {
+    "dev": "node serve.js"
+  }
+}

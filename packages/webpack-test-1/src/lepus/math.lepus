@@ -1,5 +1,5 @@
-import * as base from './base.lepus'
+import {getName} from './base.lepus'
 /** main */
-console.log(base.getName());
+console.log(getName());
 
 /** main */
