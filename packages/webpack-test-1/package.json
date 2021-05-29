@@ -9,7 +9,8 @@
     "webpack": "^5.37.1"
   },
   "scripts": {
-    "dev": "webpack --watch"
+    "dev": "cross-env NODE_ENV=development webpack --watch",
+    "build": "cross-env NODE_ENV=production webpack"
   },
   "devDependencies": {
     "webpack-cli": "^4.7.0"
