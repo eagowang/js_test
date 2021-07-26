@@ -1,7 +1,10 @@
 const path = require('path');
 const resolve = (p) => path.resolve(__dirname, p);
+const isDev = process.env.NODE_ENV === 'development';
+const mode = isDev ? 'development' : 'production';
+
 module.exports = {
-  mode: 'development',
+  mode: mode,
   entry: './index.js',
   output: {
     path: resolve('dist'),

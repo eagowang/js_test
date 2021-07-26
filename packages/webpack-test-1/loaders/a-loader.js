@@ -6,6 +6,7 @@ const resolve = (p) => path.resolve(__dirname, p);
 const map = {};
 
 module.exports = function(content) {
+<<<<<<< HEAD
   const name = 'lepus'
  const dep = EntryPlugin.createDependency(resolve('../src/lepus/math.lepus'), name);
 // console.log(dep)
@@ -16,6 +17,19 @@ this._compilation.addEntry(this._compiler.context, dep, name, (err, module) => {
   // console.log(this._compilation)
  this.async(err, module)
 })
+=======
+  return content
+//  const name = 'lepus'
+//  const dep = EntryPlugin.createDependency(resolve('../src/lepus/math.lepus'), name);
+// // console.log(dep)
+// console.log(this._compiler.context)
+// this._compilation.addEntry(this._compiler.context, dep, name, (err, module) => {
+//   console.log(err)
+//   console.log(module)
+//   // console.log(this._compilation)
+//  this.async(err, module)
+// })
+>>>>>>> 6699f6a53d1911529f84d09e9d7d0d42506ce932
 
   // console.log(content);
   // const lepus = resolve('../src/lepus/math.lepus');

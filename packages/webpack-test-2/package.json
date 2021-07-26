@@ -5,5 +5,11 @@
   "license": "MIT",
   "dependencies": {
     "webpack": "4"
+<<<<<<< HEAD
+=======
+  },
+  "scripts": {
+    "dev": "node index"
+>>>>>>> 6699f6a53d1911529f84d09e9d7d0d42506ce932
   }
 }
