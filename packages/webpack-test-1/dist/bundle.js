@@ -7,7 +7,6 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./index.js":
@@ -16,17 +15,18 @@
   \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _util_test_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/util?test=true */ \"./src/util.js?test=true\");\n\n/** main */\nconsole.log((0,_util_test_true__WEBPACK_IMPORTED_MODULE_0__.add)(1, 2));\n\n/** main */\nconsole.log('index')\n\n\n//# sourceURL=webpack://webpack-test-1/./index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _src_lepus_math_lepus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/lepus/math.lepus */ \"./src/lepus/math.lepus\");\n/* harmony import */ var _src_lepus_math_lepus__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_src_lepus_math_lepus__WEBPACK_IMPORTED_MODULE_0__);\n// import {add} from '@/util?test=true';\n/** main */\n// console.log(add(1, 2));\n\n/** main */\n// console.log('index')\n\n\nconsole.log((0,_src_lepus_math_lepus__WEBPACK_IMPORTED_MODULE_0__.add)(1, 2));\n\n\n//# sourceURL=webpack://webpack-test-1/./index.js?");
 
 /***/ }),
 
-/***/ "./src/util.js?test=true":
-/*!*******************************!*\
-  !*** ./src/util.js?test=true ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ "./src/lepus/math.lepus":
+/*!******************************!*\
+  !*** ./src/lepus/math.lepus ***!
+  \******************************/
+/***/ (() => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"add\": () => (/* binding */ add)\n/* harmony export */ });\nfunction add(a, b) {\n  return a + b;\n}\n\n\n//# sourceURL=webpack://webpack-test-1/./src/util.js?");
+eval("\n\n//# sourceURL=webpack://webpack-test-1/./src/lepus/math.lepus?");
 
 /***/ })
 
@@ -57,6 +57,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
