@@ -6,103 +6,44 @@
  * or disable the default devtool with "devtool: false".
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
-/******/ (() => { // webpackBootstrap
-/******/ 	var __webpack_modules__ = ({
-
-/***/ "./index.js":
-/*!******************!*\
+/******/ ;(() => {
+  // webpackBootstrap
+  /******/ var __webpack_modules__ = {
+    /***/ "./index.js":
+      /*!******************!*\
   !*** ./index.js ***!
   \******************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+      /***/ () => {
+        eval(
+          "__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _util_test_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/util?test=true */ \"./src/util.js?test=true\");\n\n/** main */\nconsole.log((0,_util_test_true__WEBPACK_IMPORTED_MODULE_0__.add)(1, 2));\n\n/** main */\nconsole.log('index')\n\n\n//# sourceURL=webpack://webpack-test-1/./index.js?"
+        )
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _src_lepus_math_lepus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/lepus/math.lepus */ \"./src/lepus/math.lepus\");\n/* harmony import */ var _src_lepus_math_lepus__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_src_lepus_math_lepus__WEBPACK_IMPORTED_MODULE_0__);\n// import {add} from '@/util?test=true';\n/** main */\n// console.log(add(1, 2));\n\n/** main */\n// console.log('index')\n\n\nconsole.log((0,_src_lepus_math_lepus__WEBPACK_IMPORTED_MODULE_0__.add)(1, 2));\n\n\n//# sourceURL=webpack://webpack-test-1/./index.js?");
+        /***/
+      },
 
-/***/ }),
+    /***/ "./src/util.js?test=true":
+      /*!*******************************!*\
+  !*** ./src/util.js?test=true ***!
+  \*******************************/
+      /***/ (
+        __unused_webpack_module,
+        __webpack_exports__,
+        __webpack_require__
+      ) => {
+        eval(
+          '__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   "add": () => (/* binding */ add)\n/* harmony export */ });\nfunction add(a, b) {\n  return a + b;\n}\n\n\n//# sourceURL=webpack://webpack-test-1/./src/util.js?'
+        )
 
-/***/ "./src/lepus/math.lepus":
-/*!******************************!*\
-  !*** ./src/lepus/math.lepus ***!
-  \******************************/
-/***/ (() => {
+        /***/
+      },
 
-eval("\n\n//# sourceURL=webpack://webpack-test-1/./src/lepus/math.lepus?");
+    /******/
+  } // startup // Load entry module and return exports // This entry module can't be inlined because the eval devtool is used.
+  /************************************************************************/
+  /******/
 
-/***/ })
-
-/******/ 	});
-/************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
-/******/ 	
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
-/******/ 	
-/******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/ 	
-/************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./index.js");
-/******/ 	
-/******/ })()
-;
+  /******/ /******/ /******/ /******/ var __webpack_exports__ = {}
+  /******/ __webpack_modules__["./index.js"]()
+  /******/
+  /******/
+})()

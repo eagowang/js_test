@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .circle {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        border: 2px solid sienna;
+      }
+      .mark {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50%;
+        height: 2px;
+        box-sizing: border-box;
+        /* background: blue; */
+        border-left: 4px solid black;
+        transform-origin: right center;
+      }
+      .mark-6 {
+        transform: translateY(-50%) rotate(90deg);
+      }
+      .mark-9 {
+        transform: translateY(-50%) rotate(180deg);
+      }
+      .mark-12 {
+        transform: translateY(-50%) rotate(270deg);
+      }
+      .center-point {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: black;
+      }
+      .second-pointer {
+        position: absolute;
+        width: 2px;
+        height: 40%;
+        background: black;
+        bottom: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        transform-origin: bottom center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="circle">
+      <div class="mark mark-3"></div>
+      <div class="mark mark-6"></div>
+      <div class="mark mark-9"></div>
+      <div class="mark mark-12"></div>
+      <div class="center-point"></div>
+      <div id="second" class="second-pointer"></div>
+    </div>
+
+    <script>
+      const secondEle = document.getElementById('second');
+      function changeSecond() {
+        const timer = new Date();
+        const seconds = timer.getSeconds();
+
+        secondEle.style.transform = `translateX(-50%) rotate(${360 *
+          (seconds / 60)}deg)`;
+      }
+
+      setInterval(changeSecond, 1000);
+    </script>
+  </body>
+</html>
