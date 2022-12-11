@@ -12,11 +12,22 @@ module.exports = {
   },
   module: {
     rules: [
+      // {
+      //   test: /\.js$/i,
+      //   use: [
+      //     {
+      //       loader: resolve('./loaders/a-loader.js'),
+      //       options: {
+      //         extract: true,
+      //       },
+      //     },
+      //   ],
+      // },
       {
-        test: /\.js$/i,
+        test: /\.lepus$/i,
         use: [
           {
-            loader: resolve('./loaders/a-loader.js'),
+            loader: resolve('./loaders/lepus-loader.js'),
             options: {
               extract: true,
             },

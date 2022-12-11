@@ -1,5 +1,11 @@
-import {getName} from './base.lepus'
+import { getName } from './base.lepus';
 /** main */
 console.log(getName());
 
 /** main */
+
+function add(a, b) {
+  return a + b + getName();
+}
+
+export { add };

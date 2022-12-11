@@ -10,7 +10,9 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "faker": "^5.5.3",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "webpack": "4",
+    "webpack-dev-server": "^3.11.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
